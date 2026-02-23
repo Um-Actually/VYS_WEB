@@ -11,7 +11,11 @@ namespace VYS_WEB.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult tymy_jezdci ()
+        {
+            return View();
+        }
+        public IActionResult historie()
         {
             return View();
         }
