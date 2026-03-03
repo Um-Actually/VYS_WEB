@@ -10,15 +10,18 @@
     <link rel="stylesheet" href="~/VYS_WEB.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header class="hlavicka">
-        <nav>
+    <header class="hlavicka" >
+        <div class="menu">
             <a asp-controller="Home" asp-action="Index">Home</a>
             <a asp-controller="Home" asp-action="tymy_jezdci">Týmy</a>
             <a asp-controller="Home" asp-action="historie">Historie</a>
 
+           
+        </div>
+        <div class="loginmenu">
             <a asp-controller="User" asp-action="Login">Login</a>
-            <a asp-controller="User" asp-action="Register">Register</a>
-        </nav>
+            <a asp-controller="User" asp-action="Register">Registration</a>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">

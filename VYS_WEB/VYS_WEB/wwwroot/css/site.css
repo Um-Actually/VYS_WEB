@@ -146,16 +146,17 @@ ul {
 
 .hlavicka {
     width: 100%;
-    background-color: #d3d3d3;
+    margin: 20px 0;
+    padding: 15px 0;
+    background-color: lightgrey;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
-    padding: 15px 0;
+    flex-direction: row;
 }
 
 
-    .hlavicka a {
+    .menu a {
         text-decoration: none;
         color: black;
         font-weight: bold;
@@ -164,12 +165,27 @@ ul {
         transition: background-color 0.3s;
     }
 
-        .hlavicka a:hover {
+        .menu a:hover {
             background-color: #999999;
             color: white;
         }
 
-        .hlavicka a.hlavni {
-            background-color: #777777;
+
+    .loginmenu {
+        position: absolute;
+        right: 20px;
+    }
+    .loginmenu a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: background-color 0.3s;
+        
+    }
+
+        .loginmenu a:hover {
+            background-color: #999999;
             color: white;
         }
