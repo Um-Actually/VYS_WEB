@@ -1,13 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Historia";
+    ViewData["Title"] = "Login";
 }
 <div class="nastred">
     <h1>Login</h1>
     <form >
         <label for="fname">Username:</label><br>
-        <input type="text" id="uname" name="uname" value="Username"><br>
+        <input type="text" id="uname" name="uname" value=><br>
         <label for="lname">Password:</label><br>
         <input type="password" id="password" name="password" value=><br><br>
         <input type="submit" value="Submit">
     </form>
+    nemáte účet? <a asp-controller="User" asp-action="Register">Zaregistrujte se</a>
 </div>

@@ -15,5 +15,9 @@ namespace VYS_WEB.Controllers
         {
             return View();
         }
+        public IActionResult Profil()
+        {
+            return View();
+        }
     }
 }

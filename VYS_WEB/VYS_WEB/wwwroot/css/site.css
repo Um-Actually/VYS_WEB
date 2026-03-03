@@ -175,17 +175,73 @@ ul {
         position: absolute;
         right: 20px;
     }
-    .loginmenu a {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        padding: 10px 15px;
-        border-radius: 8px;
-        transition: background-color 0.3s;
+        .loginmenu a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
         
-    }
+        }
 
         .loginmenu a:hover {
             background-color: #999999;
             color: white;
         }
+
+    .profilmenu{
+        position: absolute;
+        left: 20px;
+    }
+        .profilmenu a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .profilmenu a:hover {
+            background-color: #999999;
+            color: white;
+        }
+
+
+.nastred label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+}
+
+.nastred input[type="text"],
+.nastred input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+    .nastred input[type="text"]:focus,
+    .nastred input[type="password"]:focus {
+        border-color: #4e73df;
+        outline: none;
+        box-shadow: 0 0 5px rgba(78, 115, 223, 0.4);
+    }
+
+.nastred input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #999999;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+    .nastred input[type="submit"]:hover {
+        background-color: #2e59d9;
+    }
