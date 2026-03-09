@@ -245,3 +245,10 @@ ul {
     .nastred input[type="submit"]:hover {
         background-color: #2e59d9;
     }
+    .error{
+        color: red;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+    }
+    }

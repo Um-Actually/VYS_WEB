@@ -3,12 +3,16 @@
 }
 <div class="nastred">
     <h1>Registration</h1>
-    <form >
+    @if (ViewData["chyba"] != null)
+    {
+        <div class="error">@ViewData["chyba"]</div>
+    }
+    <form action="/User/Register" method="post">
         <label for="fname">Username:</label><br>
-        <input type="text" id="fname" name="fname" value=><br>
+        <input type="text" name="username" ><br>
         <label for="lname">Password:</label><br>
-        <input type="password" id="password" name="password" value=><br />
-        <input type="password" id="password" name="password" value=><br><br>
+        <input type="password" name="password" ><br />
+        <input type="password" name="passwordcheck" ><br><br>
         <input type="submit" value="Submit">
     </form> 
 </div>

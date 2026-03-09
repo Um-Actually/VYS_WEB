@@ -19,5 +19,24 @@ namespace VYS_WEB.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Register(string username,string password, string passwordcheck)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                ViewData["chyba"] = "Jméno nebo heslo nebylo zadáno";
+                return View();
+            }
+            else if (password != passwordcheck)
+            {
+                ViewData["chyba"] = "Hesla se neshodují";
+                return View();
+            }
+            else
+            {
+                return Redirect("/User/Login");
+            }
+
+        }
     }
 }
