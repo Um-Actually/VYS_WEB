@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace VYS_WEB
 {
     public class Program
@@ -8,6 +10,9 @@ namespace VYS_WEB
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            // Add EF Core DbContext with SQL Server
+            builder.Services.AddDbContext<VYS_WEB.Data.ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
