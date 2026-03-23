@@ -69,22 +69,33 @@ namespace VYS_WEB.Controllers
                 return View();
             }
 
-            var user = _db.Users.FirstOrDefault(u => u.Name == username);
-            if (user == null)
+            User? prihlasenyUzivatel = _db
+                .Users
+                .Where(u => u.Name == username)
+                .FirstOrDefault();
+
+            if (prihlasenyUzivatel == null)
             {
-                ViewData["chyba"] = "Uživatel neexistuje";
+                ViewData["chyba"] = "Neznámý uživatel.";
+
                 return View();
             }
 
-            if (user.Password != password)
+            if (prihlasenyUzivatel.Password != password)
             {
-                ViewData["chyba"] = "Nesprávné heslo";
+                ViewData["chyba"] = "Chybné heslo.";
+
                 return View();
             }
 
-            TempData["username"] = user.Name;
-            return Redirect("/User/Profil");
-
+            TempData["username"] = prihlasenyUzivatel.Name;
+            return RedirectToAction("Profil");
         }
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
     }
+    
 }
