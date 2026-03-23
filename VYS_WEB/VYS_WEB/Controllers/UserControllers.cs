@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VYS_WEB.Models;
 using VYS_WEB.Data;
+using Microsoft.AspNetCore.Http;
 using System.Linq;
 
 namespace VYS_WEB.Controllers
@@ -88,12 +89,25 @@ namespace VYS_WEB.Controllers
                 return View();
             }
 
-            TempData["username"] = prihlasenyUzivatel.Name;
+            // uložíme jméno do session
+            HttpContext.Session.SetString("username", prihlasenyUzivatel.Name);
             return RedirectToAction("Profil");
         }
         public IActionResult Profile()
         {
-            return View();
+            string? prihlaseny = HttpContext.Session.GetString("prihlaseny");
+
+            if (prihlaseny == null)
+            {
+                return Redirect("/User/SignIn");
+            }
+
+            User prihlasenyUzivatel = _db
+                .Users
+                .Where(u => u.Name == prihlaseny)
+                .First();
+
+            return View(prihlasenyUzivatel);
         }
 
     }

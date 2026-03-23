@@ -1,13 +1,20 @@
 ﻿@{
     ViewData["Title"] = "Profil";
 }
+@using Microsoft.AspNetCore.Http
 <div class="nastred">
 
     <h1>Profil</h1>
-
-    @if (TempData["username"] != null)
+    @{
+        var username = Context.Session.GetString("username");
+    }
+    @if (!string.IsNullOrEmpty(username))
     {
-        <h2>Vítejte, @TempData["username"]!</h2>
+        <p> Jste přihlášení jako <b>@username</b></p>
+    }
+    else
+    {
+        <div class="error">Nejste přihlášený. <a asp-controller="User" asp-action="Login">Přihlásit se</a></div>
     }
 
 </div>
