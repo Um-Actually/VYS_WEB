@@ -3,12 +3,17 @@
 }
 <div class="nastred">
     <h1>Login</h1>
-    <form >
+    @if (ViewData["chyba"] != null)
+    {
+        <div class="error">@ViewData["chyba"]</div>
+    }
+    <form action="/User/Login" method="post">
         <label for="fname">Username:</label><br>
-        <input type="text" id="uname" name="uname" value=><br>
+        <input type="text" name="username"><br>
         <label for="lname">Password:</label><br>
-        <input type="password" id="password" name="password" value=><br><br>
+        <input type="password" name="password"><br/>
         <input type="submit" value="Submit">
     </form>
+
     nemáte účet? <a asp-controller="User" asp-action="Register">Zaregistrujte se</a>
 </div>

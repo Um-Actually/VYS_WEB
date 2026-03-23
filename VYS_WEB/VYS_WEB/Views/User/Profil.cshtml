@@ -2,5 +2,12 @@
     ViewData["Title"] = "Profil";
 }
 <div class="nastred">
+
     <h1>Profil</h1>
+
+    @if (TempData["username"] != null)
+    {
+        <h2>Vítejte, @TempData["username"]!</h2>
+    }
+
 </div>
