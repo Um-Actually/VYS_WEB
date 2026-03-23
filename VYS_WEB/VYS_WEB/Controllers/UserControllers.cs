@@ -52,7 +52,7 @@ namespace VYS_WEB.Controllers
             var user = new User
             {
                 Name = username,
-                Password = password
+                Password =BCrypt.Net.BCrypt.HashPassword(password)
             };
 
             _db.Users.Add(user);
@@ -82,7 +82,7 @@ namespace VYS_WEB.Controllers
                 return View();
             }
 
-            if (prihlasenyUzivatel.Password != password)
+            if (!BCrypt.Net.BCrypt.Verify(password, prihlasenyUzivatel.Password))
             {
                 ViewData["chyba"] = "Chybné heslo.";
 
