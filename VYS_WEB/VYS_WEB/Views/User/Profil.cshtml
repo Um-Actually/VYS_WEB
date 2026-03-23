@@ -17,4 +17,7 @@
         <div class="error">Nejste přihlášený. <a asp-controller="User" asp-action="Login">Přihlásit se</a></div>
     }
 
+    <form action="/User/SignOut" method="post">
+        <input type="submit" value="Odhlásit" />
+    </form>
 </div>

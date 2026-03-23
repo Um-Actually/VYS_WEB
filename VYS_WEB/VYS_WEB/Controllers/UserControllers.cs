@@ -89,7 +89,7 @@ namespace VYS_WEB.Controllers
                 return View();
             }
 
-            // uložíme jméno do session
+
             HttpContext.Session.SetString("username", prihlasenyUzivatel.Name);
             return RedirectToAction("Profil");
         }
@@ -108,6 +108,14 @@ namespace VYS_WEB.Controllers
                 .First();
 
             return View(prihlasenyUzivatel);
+
+        }
+        public new IActionResult SignOut()
+        {
+            HttpContext.Session.Clear();
+            Response.Cookies.Delete(".AspNetCore.Session");
+
+            return Redirect("/Home/Index");
         }
 
     }
